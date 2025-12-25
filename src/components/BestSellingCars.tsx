@@ -1,7 +1,9 @@
 import { ChevronLeft, ChevronRight, Users, Fuel, Settings2, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { getVehicleImage } from "@/lib/vehicleImages";
 import carCreta from "@/assets/car-creta.png";
 import carInnova from "@/assets/car-innova.png";
 import carCiaz from "@/assets/car-ciaz.png";
@@ -67,8 +69,16 @@ const cars = [
 ];
 
 const BestSellingCars = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [dbVehicles, setDbVehicles] = useState<any[]>([]);
   const itemsPerPage = 4;
+
+  useEffect(() => {
+    supabase.from("vehicles").select("id, brand, model").then(({ data }) => {
+      if (data) setDbVehicles(data);
+    });
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % (cars.length - itemsPerPage + 1));
@@ -79,9 +89,12 @@ const BestSellingCars = () => {
   };
 
   const handleViewDetails = (car: typeof cars[0]) => {
-    toast.info(`${car.brand} ${car.model}`, {
-      description: `Starting from ₹${car.price}/day. Book now for your next trip!`
-    });
+    const dbVehicle = dbVehicles.find(v => v.brand === car.brand && v.model === car.model);
+    if (dbVehicle) {
+      navigate(`/vehicle/${dbVehicle.id}`);
+    } else {
+      navigate("/booking");
+    }
   };
 
   return (
