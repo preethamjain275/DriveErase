@@ -6,7 +6,7 @@ MY CHOICHOICE CAR🚗  is a modern Vehicle Rental System website designed to mak
 
 ## 📌 Project Info
 
-**Project Name**: JuvenileCreate – Vehicle Rental System  
+**Project Name**: MY CHOICHOICE CAR🚗 – Vehicle Rental System  
 **Type**: Web Application  
 **Purpose**: Online vehicle booking and rental management  
 
