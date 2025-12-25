@@ -17,13 +17,13 @@ const teamMembers = [
     avatar: "PS",
   },
   {
-    name: "Prajwal Kumar",
+    name: "Pramit Jain",
     role: "Technical Lead",
     bio: "Tech enthusiast building the digital backbone of DriveEase with cutting-edge solutions.",
     avatar: "PK",
   },
   {
-    name: "Pram Singh",
+    name: "Pranjal Ranjan",
     role: "Operations Head",
     bio: "Fleet management specialist maintaining our vehicles to the highest standards of quality and safety.",
     avatar: "PS",
@@ -60,7 +60,7 @@ const AboutPage = () => {
         <title>About Us - DriveEase | Our Story, Mission & Team</title>
         <meta
           name="description"
-          content="Learn about DriveEase, India's premier self-drive car rental service. Meet our team led by Pritam Jain and discover our mission to revolutionize car rentals."
+          content="Learn about DriveEase, India's premier self-drive car rental service. Meet our team led by Preetham Jain M and discover our mission to revolutionize car rentals."
         />
       </Helmet>
 
@@ -91,7 +91,7 @@ const AboutPage = () => {
                   <div className="space-y-4 text-muted-foreground">
                     <p>
                       DriveEase was born from a simple idea: make car rentals accessible, affordable, and hassle-free
-                      for every Indian traveler. Founded in 2023 by Pritam Jain, our journey began in Mumbai with just 5
+                      for every Indian traveler. Founded in 2023 by Preetham Jain M, our journey began in Mumbai with just 5
                       cars.
                     </p>
                     <p>
