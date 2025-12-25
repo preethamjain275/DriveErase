@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MapPin, Calendar, ChevronDown, Search, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-illustration.png";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<"daily" | "monthly">("daily");
   const [location, setLocation] = useState("");
   const [pickupDate, setPickupDate] = useState("26-Dec-2025");
@@ -19,9 +21,7 @@ const HeroSection = () => {
       toast.error("Please select a city to continue");
       return;
     }
-    toast.success(`Searching cars in ${location}...`, {
-      description: "Redirecting to available cars"
-    });
+    navigate(`/booking?location=${encodeURIComponent(location)}`);
   };
 
   return (
