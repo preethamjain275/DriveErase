@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Car, Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, ArrowRight, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -23,19 +24,19 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Our Fleet", href: "#fleets" },
-    { name: "Locations", href: "#" },
-    { name: "Deals & Offers", href: "#deals" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Fleet", href: "/#fleets" },
+    { name: "Book Now", href: "/booking" },
+    { name: "Deals & Offers", href: "/#deals" },
     { name: "FAQs", href: "#faq" },
   ];
 
   const services = [
-    { name: "Daily Rentals", href: "#" },
-    { name: "Monthly Subscription", href: "#" },
-    { name: "Airport Pickup", href: "#" },
-    { name: "Corporate Rentals", href: "#" },
-    { name: "Chauffeur Service", href: "#" },
+    { name: "Daily Rentals", href: "/booking" },
+    { name: "Monthly Subscription", href: "/booking" },
+    { name: "Airport Pickup", href: "/booking" },
+    { name: "Corporate Rentals", href: "/booking" },
+    { name: "Chauffeur Service", href: "/booking" },
   ];
 
   const cities = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Pune", "Jaipur", "Kolkata"];
@@ -84,7 +85,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-6">
+            <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
                 <Car className="w-6 h-6 text-accent-foreground" />
               </div>
@@ -92,7 +93,7 @@ const Footer = () => {
                 <span className="text-xl font-display font-bold text-background">DriveEase</span>
                 <span className="text-[10px] text-background/60 -mt-1 tracking-wider">SELF DRIVE CARS</span>
               </div>
-            </a>
+            </Link>
             <p className="text-background/70 mb-6 max-w-sm text-sm">
               Experience the freedom of self-drive car rentals. Premium vehicles, flexible options, and 24/7 support for your journey across India.
             </p>
@@ -133,9 +134,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background/70 hover:text-accent transition-fast text-sm">
+                  <Link to={link.href} className="text-background/70 hover:text-accent transition-fast text-sm">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -147,9 +148,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <a href={service.href} className="text-background/70 hover:text-accent transition-fast text-sm">
+                  <Link to={service.href} className="text-background/70 hover:text-accent transition-fast text-sm">
                     {service.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -182,9 +183,9 @@ const Footer = () => {
         <div className="py-6 border-t border-background/10">
           <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center text-sm text-background/50">
             {cities.map((city) => (
-              <a key={city} href="#" className="hover:text-accent transition-fast">
+              <Link key={city} to={`/booking?location=${city}`} className="hover:text-accent transition-fast">
                 Self Drive Cars in {city}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

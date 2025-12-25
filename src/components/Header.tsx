@@ -1,22 +1,26 @@
 import { useState } from "react";
-import { Menu, X, Phone, User, Car } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, X, Phone, User, Car, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "sonner";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   const navLinks = [
-    { name: "Deals", href: "#deals" },
-    { name: "Fleets", href: "#fleets" },
-    { name: "About Us", href: "#about" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Deals", href: "/#deals" },
+    { name: "Fleets", href: "/#fleets" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact Us", href: "/#contact" },
   ];
 
-  const handleLogin = () => {
-    toast.info("Login feature coming soon!", {
-      description: "We're working on user authentication. Stay tuned!"
-    });
+  const handleLogout = async () => {
+    await signOut();
+    toast.success("Logged out successfully");
+    navigate("/");
   };
 
   return (
@@ -24,7 +28,7 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center transition-smooth group-hover:scale-105">
               <Car className="w-6 h-6 text-primary-foreground" />
             </div>
@@ -32,19 +36,19 @@ const Header = () => {
               <span className="text-xl font-display font-bold text-primary">DriveEase</span>
               <span className="text-[10px] text-muted-foreground -mt-1 tracking-wider">SELF DRIVE CARS</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-fast relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -55,13 +59,32 @@ const Header = () => {
               <span>+91 98765 43210</span>
             </a>
             <div className="w-px h-6 bg-border" />
-            <a href="#faq" className="text-sm font-medium text-foreground/80 hover:text-primary transition-fast">
-              FAQ's
-            </a>
-            <Button variant="default" className="rounded-full px-6" onClick={handleLogin}>
-              <User className="w-4 h-4 mr-2" />
-              Login or Signup
-            </Button>
+            
+            {user ? (
+              <div className="flex items-center gap-3">
+                <Link to="/booking">
+                  <Button variant="outline" className="rounded-full px-4">
+                    Book Now
+                  </Button>
+                </Link>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-sm font-bold text-primary-foreground">
+                    {user.email?.charAt(0).toUpperCase()}
+                  </div>
+                  <Button variant="ghost" size="sm" onClick={handleLogout} className="gap-1">
+                    <LogOut className="w-4 h-4" />
+                    Logout
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <Link to="/auth">
+                <Button variant="default" className="rounded-full px-6">
+                  <User className="w-4 h-4 mr-2" />
+                  Login or Signup
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,20 +101,36 @@ const Header = () => {
           <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="py-3 px-4 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-fast"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
-              <div className="pt-4 mt-2 border-t border-border">
-                <Button variant="default" className="w-full rounded-full" onClick={handleLogin}>
-                  <User className="w-4 h-4 mr-2" />
-                  Login or Signup
-                </Button>
+              <div className="pt-4 mt-2 border-t border-border space-y-2">
+                {user ? (
+                  <>
+                    <Link to="/booking" onClick={() => setIsMenuOpen(false)}>
+                      <Button variant="outline" className="w-full rounded-full">
+                        Book Now
+                      </Button>
+                    </Link>
+                    <Button variant="default" className="w-full rounded-full" onClick={handleLogout}>
+                      <LogOut className="w-4 h-4 mr-2" />
+                      Logout
+                    </Button>
+                  </>
+                ) : (
+                  <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+                    <Button variant="default" className="w-full rounded-full">
+                      <User className="w-4 h-4 mr-2" />
+                      Login or Signup
+                    </Button>
+                  </Link>
+                )}
               </div>
             </nav>
           </div>
