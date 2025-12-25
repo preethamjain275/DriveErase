@@ -5,14 +5,14 @@ const testimonials = [
   {
     id: 1,
     name: "Prajwal Joshi",
-    location: "Mumbai, India",
+    location: "Sunkadakatte, Bengaluru,India",
     rating: 5,
     text: "Your services are highly professional right from booking the car, to the prompt delivery at the designated pickup. The car was clean and the team was very welcoming. Highly recommend!",
     avatar: "PS",
   },
   {
     id: 2,
-    name: "Prajwal Kumar",
+    name: "Pramit Jain",
     location: "Bangalore, India",
     rating: 5,
     text: "Thank you very much for your quality service. The doorstep delivery made everything so convenient. Really appreciate this gesture!",
@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Preetham Jain",
+    name: "Preetham Jain M",
     location: "Bengaluru, India",
     rating: 5,
     text: "Thank you for providing unlimited kilometers. Our road trip with friends was stress-free and fun because we knew there were no hidden charges!",
@@ -28,8 +28,8 @@ const testimonials = [
   },
   {
     id: 4,
-    name: "Pram Singh",
-    location: "Jaipur, India",
+    name: "Pranjal Ranjan",
+    location: "Bhiar ,India",
     rating: 5,
     text: "I loved the service. The cars were clean and the delivery guy was polite. Thank you for the surprise gift in your car. Will definitely book again!",
     avatar: "PS",
