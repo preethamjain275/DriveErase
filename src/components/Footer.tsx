@@ -28,10 +28,10 @@ const Footer = () => {
   };
 
   const teamMembers = [
-    { name: "Preetham Jain", role: "Founder & CEO" },
+    { name: "Preetham Jain M", role: "Founder & CEO" },
     { name: "Preetham Shinde", role: "Co-Founder" },
-    { name: "Prajwal Kumar", role: "Technical Lead" },
-    { name: "Pram Singh", role: "Operations Head" },
+    { name: "Pramit Jain", role: "Technical Lead" },
+    { name: "Pranjal Ranjan", role: "Operations Head" },
   ];
 
   const quickLinks = [
