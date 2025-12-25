@@ -133,9 +133,8 @@ const Testimonials = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-smooth ${
-                index === currentIndex ? "w-6 bg-primary" : "bg-border hover:bg-muted-foreground"
-              }`}
+              className={`w-2 h-2 rounded-full transition-smooth ${index === currentIndex ? "w-6 bg-primary" : "bg-border hover:bg-muted-foreground"
+                }`}
             />
           ))}
         </div>
