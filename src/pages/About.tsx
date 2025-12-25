@@ -5,7 +5,7 @@ import { Users, Target, Heart, Award, Lightbulb, Shield } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Pritam Jain",
+    name: "PreetHam Jain M",
     role: "Founder & CEO",
     bio: "Visionary leader with 10+ years in the automobile industry. Founded DriveEase to revolutionize car rentals in India.",
     avatar: "PJ",
@@ -66,7 +66,7 @@ const AboutPage = () => {
 
       <div className="min-h-screen bg-background">
         <Header />
-        
+
         <main className="pt-20">
           {/* Hero Section */}
           <section className="py-20 bg-hero">
@@ -87,18 +87,21 @@ const AboutPage = () => {
             <div className="container mx-auto px-4 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="animate-fade-up">
-                  <h2 className="text-3xl font-display font-bold text-foreground mb-6">
-                    Our Story
-                  </h2>
+                  <h2 className="text-3xl font-display font-bold text-foreground mb-6">Our Story</h2>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      DriveEase was born from a simple idea: make car rentals accessible, affordable, and hassle-free for every Indian traveler. Founded in 2023 by Pritam Jain, our journey began in Mumbai with just 5 cars.
+                      DriveEase was born from a simple idea: make car rentals accessible, affordable, and hassle-free
+                      for every Indian traveler. Founded in 2023 by Pritam Jain, our journey began in Mumbai with just 5
+                      cars.
                     </p>
                     <p>
-                      Today, we operate in 8+ major cities across India, with a fleet of over 500+ well-maintained vehicles. Our commitment to quality service and customer satisfaction has made us one of the fastest-growing self-drive car rental companies in the country.
+                      Today, we operate in 8+ major cities across India, with a fleet of over 500+ well-maintained
+                      vehicles. Our commitment to quality service and customer satisfaction has made us one of the
+                      fastest-growing self-drive car rental companies in the country.
                     </p>
                     <p>
-                      We believe in the freedom of the open road – the joy of driving through scenic routes, the convenience of having your own vehicle, and the privacy that comes with self-drive rentals.
+                      We believe in the freedom of the open road – the joy of driving through scenic routes, the
+                      convenience of having your own vehicle, and the privacy that comes with self-drive rentals.
                     </p>
                   </div>
                 </div>
@@ -134,7 +137,8 @@ const AboutPage = () => {
                   </div>
                   <h3 className="text-2xl font-display font-bold text-foreground mb-4">Our Mission</h3>
                   <p className="text-muted-foreground">
-                    To provide every Indian traveler with access to safe, reliable, and affordable self-drive car rentals, enabling them to explore the country with complete freedom and convenience.
+                    To provide every Indian traveler with access to safe, reliable, and affordable self-drive car
+                    rentals, enabling them to explore the country with complete freedom and convenience.
                   </p>
                 </div>
                 <div className="bg-card rounded-2xl p-8 shadow-card animate-fade-up" style={{ animationDelay: "0.1s" }}>
@@ -143,7 +147,8 @@ const AboutPage = () => {
                   </div>
                   <h3 className="text-2xl font-display font-bold text-foreground mb-4">Our Vision</h3>
                   <p className="text-muted-foreground">
-                    To become India's most trusted and preferred self-drive car rental platform, setting new standards in customer experience, vehicle quality, and technological innovation.
+                    To become India's most trusted and preferred self-drive car rental platform, setting new standards
+                    in customer experience, vehicle quality, and technological innovation.
                   </p>
                 </div>
               </div>
@@ -161,7 +166,7 @@ const AboutPage = () => {
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {values.map((value, index) => (
-                  <div 
+                  <div
                     key={value.title}
                     className="bg-card rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-smooth animate-fade-up"
                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -185,9 +190,7 @@ const AboutPage = () => {
                   <Users className="w-4 h-4" />
                   Meet Our Team
                 </div>
-                <h2 className="text-3xl font-display font-bold text-foreground mb-4">
-                  The People Behind DriveEase
-                </h2>
+                <h2 className="text-3xl font-display font-bold text-foreground mb-4">The People Behind DriveEase</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   A passionate team dedicated to making your travel experiences memorable
                 </p>
@@ -195,7 +198,7 @@ const AboutPage = () => {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {teamMembers.map((member, index) => (
-                  <div 
+                  <div
                     key={member.name}
                     className="bg-card rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-smooth group animate-fade-up"
                     style={{ animationDelay: `${index * 0.1}s` }}
