@@ -1,4 +1,4 @@
-# MyChoice Car 🚗
+# DriveErase Car 🚗
 
 A modern Vehicle Rental System web application built with Vite + React + TypeScript. MyChoice Car makes it easy for users to browse vehicles, book rentals, view booking history, and for admins to manage vehicles and rentals.
 
@@ -203,15 +203,7 @@ Specify your license here (e.g., MIT). Example:
 
 Licensed under the MIT License.
 
-Author: Preetham Jain  
+Author: Preetham Jain M
 GitHub: https://github.com/preethamjain275
 
 ---
-
-If you'd like, I can:
-- Add a `.env.example` file,
-- Create a CONTRIBUTING.md,
-- Add recommended npm scripts to package.json,
-- Or open a PR with these changes.
-
-Tell me which of these you'd like next and I’ll prepare the files.
