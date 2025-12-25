@@ -4,7 +4,7 @@ import { useState } from "react";
 const testimonials = [
   {
     id: 1,
-    name: "Praanjal Sharma",
+    name: "Prajwal Joshi",
     location: "Mumbai, India",
     rating: 5,
     text: "Your services are highly professional right from booking the car, to the prompt delivery at the designated pickup. The car was clean and the team was very welcoming. Highly recommend!",
@@ -20,8 +20,8 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Pritam Verma",
-    location: "Delhi, India",
+    name: "Preetham Jain",
+    location: "Bengaluru, India",
     rating: 5,
     text: "Thank you for providing unlimited kilometers. Our road trip with friends was stress-free and fun because we knew there were no hidden charges!",
     avatar: "PV",
@@ -69,11 +69,11 @@ const Testimonials = () => {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
           <div>
             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-3">
-              What people say<br />about us
+              What people say
+              <br />
+              about us
             </h2>
-            <p className="text-muted-foreground">
-              Our clients send us smilies with our services and we love them.
-            </p>
+            <p className="text-muted-foreground">Our clients send us smilies with our services and we love them.</p>
           </div>
           <div className="flex gap-2 mt-6 lg:mt-0">
             <button
@@ -111,9 +111,7 @@ const Testimonials = () => {
               </div>
 
               {/* Text */}
-              <p className="text-foreground/90 leading-relaxed mb-6">
-                "{testimonial.text}"
-              </p>
+              <p className="text-foreground/90 leading-relaxed mb-6">"{testimonial.text}"</p>
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-border">

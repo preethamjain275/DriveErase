@@ -1,5 +1,16 @@
-import { Link } from "react-router-dom";
-import { Car, Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, ArrowRight, Users } from "lucide-react";
+import {
+  Car,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -17,26 +28,26 @@ const Footer = () => {
   };
 
   const teamMembers = [
-    { name: "Pritam Jain", role: "Founder & CEO" },
-    { name: "Praanjal Sharma", role: "Co-Founder" },
+    { name: "Preetham Jain", role: "Founder & CEO" },
+    { name: "Preetham Shinde", role: "Co-Founder" },
     { name: "Prajwal Kumar", role: "Technical Lead" },
     { name: "Pram Singh", role: "Operations Head" },
   ];
 
   const quickLinks = [
-    { name: "About Us", href: "/about" },
-    { name: "Our Fleet", href: "/#fleets" },
-    { name: "Book Now", href: "/booking" },
-    { name: "Deals & Offers", href: "/#deals" },
+    { name: "About Us", href: "#about" },
+    { name: "Our Fleet", href: "#fleets" },
+    { name: "Locations", href: "#" },
+    { name: "Deals & Offers", href: "#deals" },
     { name: "FAQs", href: "#faq" },
   ];
 
   const services = [
-    { name: "Daily Rentals", href: "/booking" },
-    { name: "Monthly Subscription", href: "/booking" },
-    { name: "Airport Pickup", href: "/booking" },
-    { name: "Corporate Rentals", href: "/booking" },
-    { name: "Chauffeur Service", href: "/booking" },
+    { name: "Daily Rentals", href: "#" },
+    { name: "Monthly Subscription", href: "#" },
+    { name: "Airport Pickup", href: "#" },
+    { name: "Corporate Rentals", href: "#" },
+    { name: "Chauffeur Service", href: "#" },
   ];
 
   const cities = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Pune", "Jaipur", "Kolkata"];
@@ -71,7 +82,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-xl bg-background/10 backdrop-blur-sm text-background placeholder:text-background/50 border border-background/20 focus:outline-none focus:ring-2 focus:ring-accent text-sm"
               />
-              <Button 
+              <Button
                 onClick={handleSubscribe}
                 className="px-6 rounded-xl bg-accent hover:bg-accent/90 text-accent-foreground whitespace-nowrap"
               >
@@ -85,7 +96,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-6">
+            <a href="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
                 <Car className="w-6 h-6 text-accent-foreground" />
               </div>
@@ -93,11 +104,12 @@ const Footer = () => {
                 <span className="text-xl font-display font-bold text-background">DriveEase</span>
                 <span className="text-[10px] text-background/60 -mt-1 tracking-wider">SELF DRIVE CARS</span>
               </div>
-            </Link>
+            </a>
             <p className="text-background/70 mb-6 max-w-sm text-sm">
-              Experience the freedom of self-drive car rentals. Premium vehicles, flexible options, and 24/7 support for your journey across India.
+              Experience the freedom of self-drive car rentals. Premium vehicles, flexible options, and 24/7 support for
+              your journey across India.
             </p>
-            
+
             {/* About Section */}
             <div className="mb-6 p-4 bg-background/5 rounded-xl" id="about">
               <h4 className="font-semibold text-background mb-3 flex items-center gap-2">
@@ -134,9 +146,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-background/70 hover:text-accent transition-fast text-sm">
+                  <a href={link.href} className="text-background/70 hover:text-accent transition-fast text-sm">
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -148,9 +160,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link to={service.href} className="text-background/70 hover:text-accent transition-fast text-sm">
+                  <a href={service.href} className="text-background/70 hover:text-accent transition-fast text-sm">
                     {service.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -169,7 +181,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent mt-0.5" />
-                <p className="text-background/70 text-sm">pritamjain@gmail.com</p>
+                <p className="text-background/70 text-sm">preethamjain@gmail.com</p>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent mt-0.5" />
@@ -183,9 +195,9 @@ const Footer = () => {
         <div className="py-6 border-t border-background/10">
           <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center text-sm text-background/50">
             {cities.map((city) => (
-              <Link key={city} to={`/booking?location=${city}`} className="hover:text-accent transition-fast">
+              <a key={city} href="#" className="hover:text-accent transition-fast">
                 Self Drive Cars in {city}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -193,12 +205,19 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-background/50 text-center md:text-left">
-            © 2025 DriveEase. All rights reserved. Created by <span className="text-accent font-medium">Pritam Jain</span>
+            © 2025 DriveEase. All rights reserved. Created by{" "}
+            <span className="text-accent font-medium">Preetham Jain M</span>
           </p>
           <div className="flex gap-6 text-sm text-background/50">
-            <a href="#" className="hover:text-accent transition-fast">Privacy Policy</a>
-            <a href="#" className="hover:text-accent transition-fast">Terms of Service</a>
-            <a href="#" className="hover:text-accent transition-fast">Refund Policy</a>
+            <a href="#" className="hover:text-accent transition-fast">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-accent transition-fast">
+              Terms of Service
+            </a>
+            <a href="#" className="hover:text-accent transition-fast">
+              Refund Policy
+            </a>
           </div>
         </div>
       </div>
