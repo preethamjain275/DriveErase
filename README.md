@@ -47,7 +47,7 @@ Make sure you have **Node.js** and **npm** installed.
 git clone <YOUR_GIT_URL>
 
 # Navigate to the project directory
-cd juvenilecreate
+cd MY CHOICHOICE CAr🚗
 
 # Install dependencies
 npm install
