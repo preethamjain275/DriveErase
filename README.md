@@ -23,10 +23,9 @@ A modern Vehicle Rental System web application built with Vite + React + TypeScr
 
 ## Demo
 
-(If you have a deployed demo, add the link here.)
 
 Example:
-- Live: https://your-live-demo-url
+- Live: https://vehiclerentalsystem.lovable.app/
 
 ---
 
