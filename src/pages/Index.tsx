@@ -13,13 +13,14 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>DriveEase - Self Drive Car Rental | Book Cars Online from $60/hr</title>
+        <title>DriveEase - Self Drive Car Rental India | Book Cars Online from ₹60/hr</title>
         <meta
           name="description"
-          content="Book self-drive cars online starting from $60/hr. Wide range of SUVs, Sedans & Hatchbacks with doorstep delivery, unlimited kilometers, and 24/7 support."
+          content="Book self-drive cars online in India starting from ₹60/hr. Wide range of SUVs, Sedans & Hatchbacks with doorstep delivery, unlimited kilometers, and 24/7 support. Created by Pritam Jain."
         />
-        <meta name="keywords" content="car rental, self drive cars, rent a car, car hire, vehicle rental, SUV rental" />
-        <link rel="canonical" href="https://driveease.com" />
+        <meta name="keywords" content="car rental India, self drive cars, rent a car Mumbai, car hire Delhi, vehicle rental Bangalore, SUV rental India" />
+        <meta name="author" content="Pritam Jain" />
+        <link rel="canonical" href="https://driveease.in" />
       </Helmet>
 
       <div className="min-h-screen bg-background">

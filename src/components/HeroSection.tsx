@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MapPin, Calendar, ChevronDown, Search, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import heroImage from "@/assets/hero-illustration.png";
 
 const HeroSection = () => {
@@ -11,7 +12,17 @@ const HeroSection = () => {
   const [returnDate, setReturnDate] = useState("29-Dec-2025");
   const [returnTime, setReturnTime] = useState("06:30 PM");
 
-  const cities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego"];
+  const cities = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Pune", "Jaipur", "Kolkata", "Ahmedabad", "Lucknow"];
+
+  const handleSearch = () => {
+    if (!location) {
+      toast.error("Please select a city to continue");
+      return;
+    }
+    toast.success(`Searching cars in ${location}...`, {
+      description: "Redirecting to available cars"
+    });
+  };
 
   return (
     <section className="relative min-h-[90vh] bg-hero pt-20 lg:pt-24 overflow-hidden">
@@ -103,7 +114,7 @@ const HeroSection = () => {
 
                 {/* Search Button */}
                 <div className="flex items-end">
-                  <Button className="w-full rounded-xl h-11" variant="default">
+                  <Button onClick={handleSearch} className="w-full rounded-xl h-11" variant="default">
                     <Search className="w-4 h-4 mr-2" />
                     Search
                   </Button>
@@ -148,7 +159,7 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Starting from</p>
-                    <p className="text-sm font-bold text-foreground">$60/hr</p>
+                    <p className="text-sm font-bold text-foreground">₹60/hr</p>
                   </div>
                 </div>
               </div>
