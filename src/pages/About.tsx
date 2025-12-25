@@ -5,13 +5,13 @@ import { Users, Target, Heart, Award, Lightbulb, Shield } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "PreetHam Jain M",
+    name: "Preetham Jain M",
     role: "Founder & CEO",
     bio: "Visionary leader with 10+ years in the automobile industry. Founded DriveEase to revolutionize car rentals in India.",
-    avatar: "PJ",
+    avatar: "PM",
   },
   {
-    name: "Praanjal Sharma",
+    name: "Preetham S Shinde",
     role: "Co-Founder & COO",
     bio: "Operations expert ensuring seamless vehicle delivery and customer satisfaction across all locations.",
     avatar: "PS",
@@ -20,13 +20,13 @@ const teamMembers = [
     name: "Pramit Jain",
     role: "Technical Lead",
     bio: "Tech enthusiast building the digital backbone of DriveEase with cutting-edge solutions.",
-    avatar: "PK",
+    avatar: "PJ",
   },
   {
     name: "Pranjal Ranjan",
     role: "Operations Head",
     bio: "Fleet management specialist maintaining our vehicles to the highest standards of quality and safety.",
-    avatar: "PS",
+    avatar: "PR",
   },
 ];
 
@@ -91,8 +91,8 @@ const AboutPage = () => {
                   <div className="space-y-4 text-muted-foreground">
                     <p>
                       DriveEase was born from a simple idea: make car rentals accessible, affordable, and hassle-free
-                      for every Indian traveler. Founded in 2023 by Preetham Jain M, our journey began in Mumbai with just 5
-                      cars.
+                      for every Indian traveler. Founded in 2023 by Preetham Jain M, our journey began in Mumbai with
+                      just 5 cars.
                     </p>
                     <p>
                       Today, we operate in 8+ major cities across India, with a fleet of over 500+ well-maintained
