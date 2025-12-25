@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight, Users, Fuel, Settings2, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import carCreta from "@/assets/car-creta.png";
 import carInnova from "@/assets/car-innova.png";
 import carCiaz from "@/assets/car-ciaz.png";
@@ -16,7 +17,7 @@ const cars = [
     seats: 5,
     fuel: "Petrol/Diesel",
     transmission: "Manual/Auto",
-    price: 85,
+    price: 2500,
     image: carCreta,
   },
   {
@@ -27,7 +28,7 @@ const cars = [
     seats: 7,
     fuel: "Diesel",
     transmission: "Manual/Auto",
-    price: 120,
+    price: 3500,
     image: carInnova,
   },
   {
@@ -38,7 +39,7 @@ const cars = [
     seats: 5,
     fuel: "Petrol",
     transmission: "Manual/Auto",
-    price: 65,
+    price: 1800,
     image: carCiaz,
   },
   {
@@ -49,7 +50,7 @@ const cars = [
     seats: 7,
     fuel: "Diesel",
     transmission: "Manual",
-    price: 95,
+    price: 2800,
     image: carScorpio,
   },
   {
@@ -60,7 +61,7 @@ const cars = [
     seats: 5,
     fuel: "Petrol",
     transmission: "Manual/Auto",
-    price: 55,
+    price: 1200,
     image: carSwift,
   },
 ];
@@ -75,6 +76,12 @@ const BestSellingCars = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + (cars.length - itemsPerPage + 1)) % (cars.length - itemsPerPage + 1));
+  };
+
+  const handleViewDetails = (car: typeof cars[0]) => {
+    toast.info(`${car.brand} ${car.model}`, {
+      description: `Starting from ₹${car.price}/day. Book now for your next trip!`
+    });
   };
 
   return (
@@ -151,9 +158,14 @@ const BestSellingCars = () => {
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <div>
                     <span className="text-xs text-muted-foreground">Starting from</span>
-                    <p className="text-lg font-bold text-foreground">${car.price}<span className="text-sm font-normal text-muted-foreground">/day</span></p>
+                    <p className="text-lg font-bold text-foreground">₹{car.price}<span className="text-sm font-normal text-muted-foreground">/day</span></p>
                   </div>
-                  <Button variant="outline" size="sm" className="rounded-full group/btn">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="rounded-full group/btn"
+                    onClick={() => handleViewDetails(car)}
+                  >
                     View Details
                     <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>

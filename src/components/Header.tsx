@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu, X, Phone, User, ChevronDown, Car } from "lucide-react";
+import { Menu, X, Phone, User, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +12,12 @@ const Header = () => {
     { name: "About Us", href: "#about" },
     { name: "Contact Us", href: "#contact" },
   ];
+
+  const handleLogin = () => {
+    toast.info("Login feature coming soon!", {
+      description: "We're working on user authentication. Stay tuned!"
+    });
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
@@ -43,15 +50,15 @@ const Header = () => {
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+1800123456" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-fast">
+            <a href="tel:+919876543210" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-fast">
               <Phone className="w-4 h-4" />
-              <span>1800-123-456</span>
+              <span>+91 98765 43210</span>
             </a>
             <div className="w-px h-6 bg-border" />
             <a href="#faq" className="text-sm font-medium text-foreground/80 hover:text-primary transition-fast">
               FAQ's
             </a>
-            <Button variant="default" className="rounded-full px-6">
+            <Button variant="default" className="rounded-full px-6" onClick={handleLogin}>
               <User className="w-4 h-4 mr-2" />
               Login or Signup
             </Button>
@@ -81,7 +88,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-4 mt-2 border-t border-border">
-                <Button variant="default" className="w-full rounded-full">
+                <Button variant="default" className="w-full rounded-full" onClick={handleLogin}>
                   <User className="w-4 h-4 mr-2" />
                   Login or Signup
                 </Button>
